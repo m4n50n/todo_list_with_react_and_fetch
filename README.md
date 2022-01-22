@@ -1,7 +1,5 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) TODO List with React and Fetch
 
-![screenshot](https://raw.githubusercontent.com/m4n50n/todo_list_with_react/main/screenshot_preview.png)
-
 ✏ *Creating a TODO list application that allows users to add and delete tasks with **React** by sync our todo list with a real database, using a **RESTful** and public API made for this exercise. Inspired in **./preview.gif***.
 
 ## Instructions 📄
