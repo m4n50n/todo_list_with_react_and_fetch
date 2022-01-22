@@ -1,14 +1,15 @@
 body {
   background: #abbaab;
-}
-
-.container-fluid {
   min-height: 100vh;
 }
 
 h1 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Caveat", cursive;
   color: #292934;
+}
+
+.todo-wrapper {
+  background-color: #c5d9c5;
 }
 
 input.form-control,
@@ -53,10 +54,6 @@ input.form-control:focus {
   order: 2;
   border: 1px solid #30f00d36;
   background-color: #30f00d36;
-}
-
-.fa-times {
-  font-size: 19px;
 }
 
 /* Loading spinner */

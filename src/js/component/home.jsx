@@ -88,47 +88,50 @@ const Home = () => {
 	};
 
 	return (
-		<div className="container-fluid p-0">
+		<div className="container-fluid">
 			<div className="row mt-4 mb-3">
 				<div className="col-12">
-					<p className="h1 text-center mt-1 mb-3">
-						<i className="fas fa-tasks"></i>
-					</p>
-					<h1 className="text-center">TO-DO with React and Fetch</h1>
+					<h2 className="text-center text-white mt-1 mb-2">
+						<i className="fas fa-stream p-3 rounded-circle bg-dark shadow-sm"></i>
+					</h2>
+					<h1 className="text-center">
+						TO-DO List with <strong>React</strong> and{" "}
+						<strong>Fetch</strong>
+					</h1>
 				</div>
 			</div>
 
-			<div className="row flex-wrap justify-content-center align-items-center gap-2 mb-5 mx-2">
-				<div className="col-12 col-sm-6 col-md-6 col-xl-3 p-0">
-					<input
-						type="text"
-						title="Write a new task"
-						className="form-control border-0 shadow-sm"
-						value={InputValue}
-						placeholder="Write a new task"
-						onChange={(e) => setInputValue(e.target.value)}
-						onKeyDown={(e) =>
-							e.key === "Enter" ? HandleNewTask() : null
-						}
-						autoFocus
+			<div className="row justify-content-center">
+				<div className="todo-wrapper col-12 col-sm-10 col-md-8 col-lg-7 col-xl-5 d-flex flex-column gap-2 p-2 rounded-3 shadow-lg">
+					<div className="input-group">
+						<input
+							type="text"
+							title="Write a new task"
+							className="form-control border-0 shadow-sm"
+							value={InputValue}
+							placeholder="Give me a task"
+							onChange={(e) => setInputValue(e.target.value)}
+							onKeyDown={(e) =>
+								e.key === "Enter" ? HandleNewTask() : null
+							}
+							autoFocus
+						/>
+
+						<button
+							type="button"
+							title="Add task"
+							className="input-group-text btn btn-sm btn-dark shadow-sm text-white px-3"
+							onClick={() => HandleNewTask()}>
+							<i className="fas fa-share"></i>
+						</button>
+					</div>
+
+					<TodoList
+						TasksList={TasksList}
+						CompleteTask={CompleteTask}
 					/>
 				</div>
-
-				<div className="col-12 col-sm-auto p-0">
-					<button
-						type="button"
-						title="Add task"
-						className="btn btn-dark w-100 shadow-sm text-white"
-						onClick={() => HandleNewTask()}>
-						<span className="d-sm-none pe-2">
-							<strong>SEND</strong> TASK
-						</span>
-						<i className="fas fa-share"></i>
-					</button>
-				</div>
 			</div>
-
-			<TodoList TasksList={TasksList} CompleteTask={CompleteTask} />
 
 			{ShowLoadingSpinner ? <LoadingSpinner /> : null}
 			<ModalWindow show={ShowErrorModal} />
