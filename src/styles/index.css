@@ -1,36 +1,42 @@
 body {
+  background: #abbaab;
+}
+
+.container-fluid {
   min-height: 100vh;
-  background: #fdda307d;
 }
 
 h1 {
   font-family: "Josefin Sans", sans-serif;
-  text-shadow: 3px 3px 7px #c19100;
+  color: #292934;
 }
 
-.list-title h5 {
-  text-align: center;
-}
-
-h5,
-input,
+input.form-control,
 .task {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     color: #292934;
 }
 
-input {
-  caret-color: #ffc720;
+input.form-control {
+  caret-color: #212529;
 }
 
-.form-control:focus {
-  border: 1px solid #ffc821 !important;
+input.form-control::placeholder {
+  font-weight: 500;
+}
+
+input.form-control:focus {
+  border: 1px solid #b4cbb4 !important;
 }
 
 .form-check input {
   font-size: 17px;
   border: 1px solid #919191;
+}
+
+.form-check-input:focus {
+  border-color: #b4cbb4;
 }
 
 .form-check-input:checked {
@@ -39,13 +45,34 @@ input {
 }
 
 .task {
-  order: 2;
-  padding: 4px;
+  order: 1;
   background-color: white;
 }
 
 .task.completed {
-  order: 4;
+  order: 2;
   border: 1px solid #30f00d36;
   background-color: #30f00d36;
+}
+
+.fa-times {
+  font-size: 19px;
+}
+
+/* Loading spinner */
+.loading-spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #778177;
+  opacity: 50%;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
 }
