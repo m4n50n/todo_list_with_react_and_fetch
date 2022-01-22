@@ -1,0 +1,51 @@
+body {
+  min-height: 100vh;
+  background: #fdda307d;
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  text-shadow: 3px 3px 7px #c19100;
+}
+
+.list-title h5 {
+  text-align: center;
+}
+
+h5,
+input,
+.task {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #292934;
+}
+
+input {
+  caret-color: #ffc720;
+}
+
+.form-control:focus {
+  border: 1px solid #ffc821 !important;
+}
+
+.form-check input {
+  font-size: 17px;
+  border: 1px solid #919191;
+}
+
+.form-check-input:checked {
+  background-color: #75bd14;
+  border: none;
+}
+
+.task {
+  order: 2;
+  padding: 4px;
+  background-color: white;
+}
+
+.task.completed {
+  order: 4;
+  border: 1px solid #30f00d36;
+  background-color: #30f00d36;
+}
