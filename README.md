@@ -15,6 +15,7 @@
 * You can open this repository in **Gitpod**.
 * Start the webpack server with live reload running the next command: `$ npm run start`
 * If you can't start the server, run the following command: `$ npm install`
+* If you receive a react-bootstrap error, install it running the following command: `$ npm install react-bootstrap bootstrap@5.1.3`
 
 ## Sources 📌
 
@@ -25,5 +26,7 @@
 <https://content.breatheco.de/lesson/understanding-rest-apis>
 
 <http://assets.breatheco.de/apis/fake/todos/>
+
+<https://react-bootstrap.github.io/getting-started/introduction>
 
 💻 _Jose Clemente García Rodríguez_ (<https://github.com/m4n50n>)
