@@ -14,21 +14,17 @@ h1 {
 
 input.form-control,
 .task {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #292934;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #292934;
 }
 
 input.form-control {
-  caret-color: #212529;
+  caret-color: #566b56;
 }
 
 input.form-control::placeholder {
-  font-weight: 500;
-}
-
-input.form-control:focus {
-  border: 1px solid #b4cbb4 !important;
+  font-weight: 400;
 }
 
 .form-check input {
@@ -56,6 +52,20 @@ input.form-control:focus {
   background-color: #30f00d36;
 }
 
+.delete-task-button {
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.counter-container {
+  order: 3;
+  order: 3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #779377;
+  font-weight: 500;
+}
+
 /* Loading spinner */
 .loading-spinner-container {
   position: fixed;
@@ -65,11 +75,12 @@ input.form-control:focus {
   height: 100%;
   background: #778177;
   opacity: 50%;
+  z-index: 4;
 }
 
 .loading-spinner {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
 }

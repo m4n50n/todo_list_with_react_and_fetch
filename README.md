@@ -1,5 +1,7 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) TODO List with React and Fetch
 
+![screenshot](https://raw.githubusercontent.com/m4n50n/todo_list_with_react_and_fetch/main/screenshot_preview.png)
+
 ✏ *Creating a TODO list application that allows users to add tasks and mark / unmark them as complete with **React** and synchronizing them with a real database, using a **RESTful** and public API made for this exercise. Inspired in **./preview.gif***.
 
 ## Instructions 📄

@@ -1,13 +1,12 @@
 /**
- * Methods are received by the server
- * In this API:
+ * Methods are received by the API server
  * - POST: create user (sending empty array [])
- * - PUT: update todo list tasks
  * - GET: for get all data
+ * - PUT: update todo list tasks
  * - DELETE: delete user and all created tasks
  */
 
-const ApiGetTasks = async () => {
+const ApiGetData = async () => {
 	try {
 		const response = await fetch(
 			"https://assets.breatheco.de/apis/fake/todos/user/GuillermoSR",
@@ -16,18 +15,18 @@ const ApiGetTasks = async () => {
 
 		return response.ok ? response : false;
 	} catch (error) {
-		console.error("ApiGetTasks() - Catch error", error);
+		console.error("ApiGetData() - Catch error", error);
 		return false;
 	}
 };
 
-const ApiAddTask = async (Tasks) => {
+const ApiPutData = async (Data) => {
 	try {
 		const response = await fetch(
 			"https://assets.breatheco.de/apis/fake/todos/user/GuillermoSR",
 			{
 				method: "PUT",
-				body: JSON.stringify(Tasks), // Convert array / object to a JSON string (api-required value format)
+				body: JSON.stringify(Data), // Convert array / object to a JSON string (api-required value format)
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -36,29 +35,9 @@ const ApiAddTask = async (Tasks) => {
 
 		return response.ok ? response : false;
 	} catch (error) {
-		console.error("ApiAddTask() - Catch error", error);
+		console.error("ApiPutData() - Catch error", error);
 		return false;
 	}
 };
 
-const ApiCompleteTask = async (Tasks) => {
-	try {
-		const response = await fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/GuillermoSR",
-			{
-				method: "PUT",
-				body: JSON.stringify(Tasks), // Convert array / object to a JSON string (api-required value format)
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		);
-
-		return response.ok ? response : false;
-	} catch (error) {
-		console.error("ApiCompleteTask() - Catch error", error);
-		return false;
-	}
-};
-
-export { ApiGetTasks, ApiAddTask, ApiCompleteTask };
+export { ApiGetData, ApiPutData };
