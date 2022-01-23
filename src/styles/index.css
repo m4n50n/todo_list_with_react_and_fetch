@@ -21,6 +21,7 @@ input.form-control,
 
 input.form-control {
   caret-color: #566b56;
+  background-color: #f4ffee;
 }
 
 input.form-control::placeholder {
@@ -48,7 +49,6 @@ input.form-control::placeholder {
 
 .task.completed {
   order: 2;
-  border: 1px solid #30f00d36;
   background-color: #30f00d36;
 }
 
