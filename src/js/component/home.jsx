@@ -83,10 +83,10 @@ const Home = () => {
 			(Task, TaskIndex) => TaskIndex !== IndexToDelete
 		);
 
-		// I define this condition because the API not accept a empty array for update data
+		// I define this condition because the API not accept a empty array for update data currently
 		Data.length === 0
 			? alert(
-					"Sorry! There must be at least one task registered on the server."
+					"Sorry! There must be at least one task registered on the server for now."
 			  )
 			: CallApiPutData(Data);
 	};

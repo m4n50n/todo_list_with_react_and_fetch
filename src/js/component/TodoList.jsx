@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TodoList = (props) => {
+	console.log(props.TasksList);
 	return props.TasksList.map((Task, TaskIndex) => (
 		<div
 			key={TaskIndex}
@@ -13,8 +14,8 @@ const TodoList = (props) => {
 					type="checkbox"
 					title="Mark as completed"
 					className="form-check-input ps-2 shadow-none"
-					onClick={() => props.DoneTask(TaskIndex)}
-					defaultChecked={Task.done}
+					onChange={() => props.DoneTask(TaskIndex)}
+					checked={Task.done ? "checked" : ""}
 				/>
 			</div>
 
