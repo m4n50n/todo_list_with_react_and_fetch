@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TodoList = (props) => {
-	console.log(props.TasksList);
 	return props.TasksList.map((Task, TaskIndex) => (
 		<div
 			key={TaskIndex}
