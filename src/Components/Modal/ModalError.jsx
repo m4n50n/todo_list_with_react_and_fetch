@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import PropTypes from "prop-types";
 
-const ModalWindow = (props) => (
+const ModalError = (props) => (
 	<Modal show={props.show}>
 		<Modal.Body className="pt-3 pb-2 bg-dark text-white text-center">
 			Ups! an error occurred while processing your request.
@@ -21,8 +21,8 @@ const ModalWindow = (props) => (
 	</Modal>
 );
 
-ModalWindow.propTypes = {
+ModalError.propTypes = {
 	show: PropTypes.bool,
 };
 
-export default ModalWindow;
+export default ModalError;

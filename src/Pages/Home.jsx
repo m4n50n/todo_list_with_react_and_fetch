@@ -1,16 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
-import TodoList from "./TodoList.jsx";
-import LoadingSpinner from "./LoadingSpinner.jsx";
-import ModalWindow from "./ModalWindow.jsx";
 
-import { ApiGetData, ApiPutData } from "../../service/todo-api.js";
+// Import Styles
+import "./Home.css";
+
+// Import Components
+import Header from "../Components/Header/Header.jsx";
+import TodoList from "../Components/TodoList/TodoList.jsx";
+import LoadingSpinner from "../Components/Spinner/Spinner.jsx";
+import ModalError from "../Components/Modal/ModalError.jsx";
+
+// Import Services
+import { ApiGetData, ApiPutData } from "../Service/todo-api.js";
 
 const Home = () => {
 	// Hooks
-	const [ShowLoadingSpinner, setShowLoadingSpinner] = useState(false);
-	const [ShowErrorModal, setShowErrorModal] = useState(false);
 	const [TasksList, setTasksList] = useState([]);
 	const [InputValue, setInputValue] = useState("");
+	const [ShowLoadingSpinner, setShowLoadingSpinner] = useState(false);
+	const [ShowErrorModal, setShowErrorModal] = useState(false);
 
 	/**
 	 * https://es.reactjs.org/docs/hooks-reference.html#useref
@@ -93,20 +100,10 @@ const Home = () => {
 
 	return (
 		<div className="container-fluid">
-			<div className="row my-3">
-				<div className="col-12">
-					<h2 className="text-center text-white mt-1 mb-2">
-						<i className="fas fa-stream p-3 rounded-circle bg-dark shadow-sm"></i>
-					</h2>
-					<h1 className="text-center">
-						TO-DO List with <strong>React</strong> and{" "}
-						<strong>Fetch</strong>
-					</h1>
-				</div>
-			</div>
+			<Header />
 
 			<div className="row justify-content-center">
-				<div className="todo-wrapper col-12 col-sm-10 col-md-8 col-lg-7 col-xl-5 d-flex flex-column flex-nowrap gap-2 p-2 rounded-3 shadow-lg">
+				<div className="todo-wrapper col-11 col-sm-10 col-md-8 col-lg-7 col-xl-5 d-flex flex-column flex-nowrap gap-2 p-2 rounded-3 shadow-lg">
 					<div className="input-group">
 						<input
 							type="text"
@@ -122,7 +119,7 @@ const Home = () => {
 									? HandleNewTask()
 									: null
 							}
-							disabled={ShowLoadingSpinner ? "disabled" : null}
+							disabled={ShowLoadingSpinner}
 							autoFocus
 						/>
 
@@ -144,14 +141,26 @@ const Home = () => {
 						DeleteTask={DeleteTask}
 					/>
 
-					<div className="counter-container text-end">
-						Total: <strong>{TasksList.length}</strong>
+					<div className="counter-container d-flex justify-content-between">
+						<div>
+							Completed:{" "}
+							<strong>
+								{TasksList.filter((Task) => Task.done).length}
+							</strong>
+						</div>
+
+						<div>
+							Pending:{" "}
+							<strong>
+								{TasksList.filter((Task) => !Task.done).length}
+							</strong>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			{ShowLoadingSpinner ? <LoadingSpinner /> : null}
-			<ModalWindow show={ShowErrorModal} />
+			<ModalError show={ShowErrorModal} />
 		</div>
 	);
 };
