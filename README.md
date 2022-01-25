@@ -29,4 +29,6 @@
 
 <https://react-bootstrap.github.io/getting-started/introduction>
 
+<https://github.com/davidhu2000/react-spinners>
+
 💻 _Jose Clemente García Rodríguez_ (<https://github.com/m4n50n>)
