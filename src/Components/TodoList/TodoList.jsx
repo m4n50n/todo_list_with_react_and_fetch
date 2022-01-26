@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TodoList = (props) => {
+export const TodoList = (props) => {
 	return props.TasksList.map((Task, TaskIndex) => (
 		<div
 			key={TaskIndex}
@@ -35,5 +35,3 @@ TodoList.propTypes = {
 	DoneTask: PropTypes.func,
 	DeleteTask: PropTypes.func,
 };
-
-export default TodoList;

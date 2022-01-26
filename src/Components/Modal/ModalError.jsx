@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import PropTypes from "prop-types";
 
-const ModalError = (props) => (
+export const ModalError = (props) => (
 	<Modal show={props.show}>
 		<Modal.Body className="pt-3 pb-2 bg-dark text-white text-center">
 			Ups! an error occurred while processing your request.
@@ -24,5 +24,3 @@ const ModalError = (props) => (
 ModalError.propTypes = {
 	show: PropTypes.bool,
 };
-
-export default ModalError;

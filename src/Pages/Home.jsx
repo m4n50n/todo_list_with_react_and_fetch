@@ -4,10 +4,10 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 
 // Import Components
-import Header from "../Components/Header/Header.jsx";
-import TodoList from "../Components/TodoList/TodoList.jsx";
-import LoadingSpinner from "../Components/Spinner/Spinner.jsx";
-import ModalError from "../Components/Modal/ModalError.jsx";
+import { Header } from "../Components/Header/Header.jsx";
+import { TodoList } from "../Components/TodoList/TodoList.jsx";
+import { Spinner } from "../Components/Spinner/Spinner.jsx";
+import { ModalError } from "../Components/Modal/ModalError.jsx";
 
 // Import Services
 import { ApiGetData, ApiPutData } from "../Service/todo-api.js";
@@ -156,7 +156,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			{ShowLoadingSpinner ? <LoadingSpinner /> : null}
+			{ShowLoadingSpinner ? <Spinner /> : null}
 			<ModalError show={ShowErrorModal} />
 		</div>
 	);
