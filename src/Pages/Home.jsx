@@ -76,26 +76,23 @@ const Home = () => {
 	 * Finishing and deleting a task
 	 * In these mappings I don't use setTasksList for prevent the component reload before finishing or deleting the task
 	 */
-	const DoneTask = (IndexToComplete) =>
-		CallApiPutData(
-			TasksList.map((Task, TaskIndex) =>
-				TaskIndex === IndexToComplete
-					? { ...Task, done: !Task.done }
-					: { ...Task }
-			)
-		);
+	const DoneTask = (IndexToComplete) => {
+		const ActualList = [...TasksList];
+		ActualList[IndexToComplete].done = !ActualList[IndexToComplete].done;
+
+		CallApiPutData(ActualList);
+	};
 
 	const DeleteTask = (IndexToDelete) => {
-		const Data = TasksList.filter(
-			(Task, TaskIndex) => TaskIndex !== IndexToDelete
-		);
+		const ActualList = [...TasksList];
+		ActualList.splice(IndexToDelete, 1);
 
 		// I define this condition because the API not accept a empty array for update data currently
-		Data.length === 0
+		ActualList.length === 0
 			? alert(
 					"Sorry! There must be at least one task registered on the server for now."
 			  )
-			: CallApiPutData(Data);
+			: CallApiPutData(ActualList);
 	};
 
 	return (
