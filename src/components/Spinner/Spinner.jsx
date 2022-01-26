@@ -1,5 +1,5 @@
 import React from "react";
-import "./Spinner.css";
+import "./spinner.css";
 
 // Import spinner (https://github.com/davidhu2000/react-spinners)
 import PuffLoader from "react-spinners/PuffLoader";

@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 
 // Import Styles
-import "./Home.css";
+import "./home.css";
 
 // Import Components
-import { Header } from "../Components/Header/Header.jsx";
-import { TodoList } from "../Components/TodoList/TodoList.jsx";
-import { Spinner } from "../Components/Spinner/Spinner.jsx";
-import { ModalError } from "../Components/Modal/ModalError.jsx";
+import { Header } from "../components/Header/Header.jsx";
+import { TodoList } from "../components/TodoList/TodoList.jsx";
+import { Spinner } from "../components/Spinner/Spinner.jsx";
+import { ModalError } from "../components/Modal/ModalError.jsx";
 
 // Import Services
-import { ApiGetData, ApiPutData } from "../Service/todo-api.js";
+import { ApiGetData, ApiPutData } from "../service/todo-api.js";
 
 const Home = () => {
 	// Hooks
@@ -132,6 +132,7 @@ const Home = () => {
 							<i className="fas fa-share"></i>
 						</button>
 					</div>
+
 					<TodoList
 						TasksList={TasksList}
 						DoneTask={DoneTask}

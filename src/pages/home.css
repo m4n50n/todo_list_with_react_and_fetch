@@ -3,11 +3,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-family: "Caveat", cursive;
-  color: #292934;
-}
-
 .todo-wrapper {
   background-color: #c5d9c5;
 }

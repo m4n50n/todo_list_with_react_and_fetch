@@ -5,8 +5,7 @@
  * - PUT: update todo list tasks
  * - DELETE: delete user and all created tasks
  */
-
-const ApiGetData = async () => {
+export const ApiGetData = async () => {
 	try {
 		const response = await fetch(
 			"https://assets.breatheco.de/apis/fake/todos/user/joseclementegarciarodriguez",
@@ -20,7 +19,7 @@ const ApiGetData = async () => {
 	}
 };
 
-const ApiPutData = async (Data) => {
+export const ApiPutData = async (Data) => {
 	try {
 		const response = await fetch(
 			"https://assets.breatheco.de/apis/fake/todos/user/joseclementegarciarodriguez",
@@ -39,5 +38,3 @@ const ApiPutData = async (Data) => {
 		return false;
 	}
 };
-
-export { ApiGetData, ApiPutData };
