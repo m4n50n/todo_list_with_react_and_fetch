@@ -74,7 +74,7 @@ const Home = () => {
 
 	/**
 	 * Finishing and deleting a task
-	 * In these mappings I don't use setTasksList for prevent the component reload before finishing or deleting the task
+	 * In this function I don't use setTasksList for prevent the component reload before finishing or deleting the task
 	 */
 	const DoneTask = (IndexToComplete) => {
 		const ActualList = [...TasksList];
